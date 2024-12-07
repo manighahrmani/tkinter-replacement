@@ -3,10 +3,10 @@ from nicegui import ui
 
 class PosApp:
     def __init__(self):
-        # Initialize total and UI attributes
         self.total = 0.00
-        self.total_label = None  # Placeholder for the total label
-        self.item_price_input = None  # Placeholder for the input field
+        self.total_label = None
+        self.dialog = None
+        self.item_price_input = None
 
     def render(self):
         # Set the page title
@@ -17,20 +17,27 @@ class PosApp:
         self.total_label = ui.label(
             f"Total Bill: £{self.total:.2f}").classes("text-lg mb-4")
 
-        # Item price input
-        self.item_price_input = ui.number(
-            label="Enter Item Price (£)",
-            value=0.00,
-            step=0.01,
-            min=0.00,
-        ).classes("mb-4")
-
         # Add item button
-        ui.button("Add Item", on_click=self.add_item).classes("mr-2")
+        ui.button("Add Item", on_click=self.open_dialog).classes("mr-2")
 
         # Reset button
         ui.button("Reset Bill", on_click=self.reset_bill).classes(
             "bg-red-500 text-white")
+
+        # Define the dialog
+        self.dialog = ui.dialog().classes("w-96")
+        with self.dialog:
+            with ui.card():
+                ui.label("Enter Item Price (£)").classes("text-lg mb-4")
+                self.item_price_input = ui.number(
+                    value=0.00, step=0.01, min=0.00).classes("mb-4")
+                with ui.row():
+                    ui.button("Add", on_click=self.add_item).classes("mr-2")
+                    ui.button("Cancel", on_click=self.dialog.close)
+
+    def open_dialog(self):
+        # Open the dialog
+        self.dialog.open()
 
     def add_item(self):
         item_price = self.item_price_input.value
@@ -43,6 +50,9 @@ class PosApp:
 
             # Provide feedback
             ui.notify(f"Added item: £{item_price:.2f}", color="green")
+
+            # Close the dialog
+            self.dialog.close()
 
     def reset_bill(self):
         # Reset total
