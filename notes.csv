@@ -1,0 +1,10 @@
+,Compatibility,,,,,,,,,,
+Name,macOS,Ubuntu,Windows 11,Windows 10,University,Easy installation,Easy syntax,Online docs,Accessibility,Acceptable AI recommendations,Other considerations
+GTK3,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Easy syntax but god awful installation and no proper documentation. I could not even make this run and gave up. Screw the idiots who made it and didn't maintain it.
+wxPython,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,"Overly complicated syntax, camelCase names, bad AI suggestions."
+PyQt ,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,Old syntax. Badly maintained documentation. There's a GUI designer for it: Qt Designer (a bit like Dreamweaver for HTML).
+Flet ,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"Easy syntax, installation and docs. Built with Flutter, very similar widget tree. Navigation between pages requires knowledge of routing."
+Kivy,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,"Overcomplicated widget tree, ridiculous imports, over stylised UI. Used in industry (second most popular after Tkinter)"
+Streamlit,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,Easy syntax. Easily deployable via GitHub Codespaces (great for portfolios). Weird event handling and bad AI suggestions.
+Nice GUI,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,AI makes mistakes. Easy syntax but odd errors.
+,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,
