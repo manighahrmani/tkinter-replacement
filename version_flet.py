@@ -12,25 +12,17 @@ class PosApp:
         page.title = "POS System"
         page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-        # Function to update total bill
-        def update_total_bill():
-            nonlocal total_label
-            try:
-                item_price = float(item_price_field.value)
-                self.total += item_price
-                item_price_field.value = ""  # Clear the input field
-                total_label.value = f"Total Bill: £{self.total:.2f}"
-                page.update()
-                add_item_dialog.open = False  # Close the dialog
-                page.update()
-            except ValueError:
-                page.snack_bar = ft.SnackBar(
-                    ft.Text("Please enter a valid number."))
-                page.snack_bar.open = True
-                page.update()
-
         # Label for displaying the total bill
         total_label = ft.Text(f"Total Bill: £{self.total:.2f}", size=20)
+
+        # Function to update total bill
+        def update_total_bill():
+            item_price = float(item_price_field.value)
+            self.total += item_price
+            item_price_field.value = ""  # Clear the input field
+            total_label.value = f"Total Bill: £{self.total:.2f}"
+            add_item_dialog.open = False  # Close the dialog
+            page.update()
 
         # Button to open the "Add Item" dialog
         def open_add_item_dialog(e):
