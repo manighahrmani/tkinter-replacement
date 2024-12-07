@@ -72,3 +72,6 @@ class PosApp:
 def main():
     app = PosApp()
     app.run()
+
+
+main()
