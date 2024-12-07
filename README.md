@@ -1,10 +1,6 @@
 # Tkinter Replacement Project
 
-This repository contains a simple GUI program implemented using different Python GUI toolkits. The main file, `version_tkinter`, uses Tkinter, while the other Python files implement the same application using various other toolkits.
-
-## Getting Started
-
-To get started with this project, you need to create a virtual environment and install the dependencies listed in `requirements.txt`.
+This repository contains a simple GUI program implemented using different Python GUI toolkits. The main file, [`version_tkinter.py`](version_tkinter.py), uses Tkinter, while the other Python files implement the same application using various other libraries.
 
 ### Prerequisites
 
@@ -16,16 +12,16 @@ Make sure you have Python installed on your system. You can download it from [py
 2. Navigate to the project directory.
 3. Create a virtual environment by running the following command:
    ```sh
-   python -m venv venv
+   python -m venv .venv
    ```
 4. Activate the virtual environment:
    - On Windows:
      ```sh
-     venv\Scripts\activate
+     .venv\Scripts\activate
      ```
    - On macOS and Linux:
      ```sh
-     source venv/bin/activate
+     source .venv/bin/activate
      ```
 
 ### Installing Dependencies
